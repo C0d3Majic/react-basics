@@ -1,6 +1,7 @@
 import React, { Component}  from 'react';
 const isSearched = searchTerm => item =>
 item.title.toLowerCase().includes(searchTerm.toLowerCase());
+
 class Table extends Component {
     render() {
     const { list, pattern, onDismiss } = this.props;
