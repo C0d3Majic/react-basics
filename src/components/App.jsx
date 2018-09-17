@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Search from './components/Search';
-import Table from './components/Table';
+import '../App.css';
+import Search from './Search';
+import Table from './Table';
 const list = [
   {
     title: 'React',
@@ -48,11 +47,14 @@ class App extends Component {
   render() {
     const { searchTerm, list } = this.state;
     return (
-      <div className="App">
-        <Search
-          value={searchTerm}
-          onChange={e => this.onSearchChange(e)}
-        />
+      <div className="page">
+        <div className="interactions">
+          <Search
+            value={searchTerm}
+            onChange={e => this.onSearchChange(e)}>
+            Search
+            </Search>
+        </div>
         <Table
           list={list}
           pattern={searchTerm}
